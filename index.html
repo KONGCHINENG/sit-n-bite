@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sit N Bite Cafe — Chicken Chops, Pasta & Fish n Chips · Ipoh</title>
+<meta name="description" content="Sit N Bite Cafe, Medan Ipoh Bestari. Hearty chicken chops, carbonara, aglio olio, fish n chips, croissants and local favourites. Rated 4.9 by 1,000+ diners. Order or book on WhatsApp.">
+<meta name="theme-color" content="#1f3d2f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --butter:#fbf6ec;
+    --butter-2:#f3ead9;
+    --paper:#fffdf8;
+    --forest:#1f3d2f;
+    --forest-2:#2c5442;
+    --tomato:#e2552d;
+    --tomato-deep:#c2431f;
+    --mustard:#f2b33d;
+    --ink:#22201b;
+    --muted:#6e675c;
+    --rule:#e6dccb;
+    --wa:#1fa855;
+    --serif:"Young Serif", Georgia, serif;
+    --sans:"Outfit", system-ui, sans-serif;
+    --gut:clamp(16px, 5vw, 64px);
+    --max:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--butter);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  img,svg{display:block}
+  :focus-visible{outline:2px solid var(--tomato);outline-offset:3px}
+  ::selection{background:var(--mustard);color:var(--ink)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--tomato-deep)}
+  .eyebrow::before{content:"";width:22px;height:2px;background:currentColor}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--forest);line-height:1.02;letter-spacing:-.015em}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:600;font-size:1rem;text-decoration:none;transition:transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn-wa{background:var(--wa);color:#fff;box-shadow:0 10px 24px -12px rgba(31,168,85,.8)}
+  .btn-wa:hover{background:#178a45;transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid var(--forest);color:var(--forest)}
+  .btn-ghost:hover{background:var(--forest);color:var(--butter)}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(251,246,236,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+  .nav.scrolled{border-color:var(--rule)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
+  .logo-mark{width:44px;height:44px;border-radius:50%;background:var(--forest);color:var(--mustard);display:grid;place-items:center;font-family:var(--serif);font-size:1.05rem}
+  .logo-word{font-family:var(--serif);font-size:1.25rem;color:var(--forest)}
+  .logo-word span{color:var(--tomato)}
+  .nav ul{display:flex;align-items:center;gap:30px;list-style:none}
+  .nav ul a{text-decoration:none;font-weight:500;font-size:.96rem;padding:12px 0;display:inline-block}
+  .nav ul a:hover{color:var(--tomato-deep)}
+  .nav ul a.btn{display:inline-flex;min-height:44px;padding:0 18px;font-size:.92rem}
+  .nav ul a.btn:hover{color:#fff}
+  @media (max-width:780px){.nav ul li.hide-m{display:none}}
+  @media (max-width:400px){.logo-word{display:none}}
+
+  /* hero */
+  .hero{padding:clamp(36px,6vw,80px) 0 clamp(56px,8vw,100px)}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center}
+  .rating{display:inline-flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:6px 14px 6px 8px;font-size:.88rem;font-weight:500}
+  .rating b{background:var(--mustard);color:var(--ink);border-radius:999px;padding:2px 10px;font-weight:700}
+  .stars{color:var(--mustard);letter-spacing:2px}
+  .hero h1{font-size:clamp(3rem,7.6vw,6.4rem);margin:22px 0 22px}
+  .hero h1 em{font-style:normal;color:var(--tomato)}
+  .hero p.lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--muted);max-width:31em}
+  .hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:38px;padding-top:26px;border-top:1px solid var(--rule)}
+  .facts div{font-size:.86rem;color:var(--muted)}
+  .facts strong{display:block;font-family:var(--serif);font-weight:400;font-size:1.7rem;color:var(--forest);line-height:1.1}
+
+  .plate-art{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;justify-self:center}
+  .plate-art .bg{position:absolute;inset:4%;border-radius:50%;background:var(--forest)}
+  .plate-art .bg::before{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px dashed var(--forest-2);opacity:.5}
+  .plate-art svg.plate{position:absolute;inset:12%;width:76%;height:76%;filter:drop-shadow(0 26px 30px rgba(0,0,0,.35))}
+  .badge{position:absolute;border-radius:50%;display:grid;place-content:center;text-align:center;font-weight:700;line-height:1.05;box-shadow:0 14px 28px -14px rgba(0,0,0,.5)}
+  .badge.b1{right:-1%;top:6%;width:126px;height:126px;background:var(--tomato);color:#fff;transform:rotate(10deg);font-size:.82rem}
+  .badge.b1 b{font-family:var(--serif);font-weight:400;font-size:1.45rem;display:block;margin-top:2px}
+  .badge.b2{left:-2%;bottom:8%;width:104px;height:104px;background:var(--mustard);color:var(--ink);transform:rotate(-10deg);font-size:.8rem}
+  .badge.b2 b{font-family:var(--serif);font-weight:400;font-size:1.6rem;display:block}
+  @media (max-width:880px){
+    .hero .wrap{grid-template-columns:1fr}
+    .plate-art{max-width:380px;order:-1}
+    .badge.b1{width:100px;height:100px;font-size:.74rem}.badge.b1 b{font-size:1.12rem}
+    .badge.b2{width:88px;height:88px}.badge.b2 b{font-size:1.35rem}
+  }
+
+  /* ticker */
+  .ticker{background:var(--tomato);color:#fff;overflow:hidden;padding:15px 0;white-space:nowrap}
+  .ticker .track{display:inline-flex;gap:40px;animation:slide 36s linear infinite;font-family:var(--serif);font-size:1.25rem}
+  .ticker .track span::after{content:"✦";margin-left:40px;color:var(--mustard);font-size:.8em}
+  @keyframes slide{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.ticker .track{animation:none}}
+
+  section{scroll-margin-top:84px}
+  .sec{padding:clamp(72px,10vw,130px) 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:46px}
+  .sec-head h2{font-size:clamp(2.3rem,5vw,3.9rem);margin-top:14px}
+  .sec-head p{max-width:27em;color:var(--muted)}
+
+  /* favourites */
+  .favs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .fav{position:relative;background:var(--paper);border:1px solid var(--rule);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:12px;transition:transform .25s ease, box-shadow .25s ease}
+  .fav:hover{transform:translateY(-4px);box-shadow:0 24px 44px -28px rgba(31,61,47,.55)}
+  .fav .dish{height:170px;border-radius:16px;display:grid;place-items:center;overflow:hidden}
+  .fav .dish svg{width:150px;height:150px}
+  .fav .cat{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--tomato-deep)}
+  .fav h3{font-size:1.32rem}
+  .fav p{font-size:.92rem;color:var(--muted);flex:1}
+  .fav .price{font-family:var(--serif);font-size:1.2rem;color:var(--forest)}
+  @media (max-width:1000px){.favs{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:540px){.favs{grid-template-columns:1fr}}
+
+  /* menu */
+  .menu{background:var(--paper);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .menu-tools{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:30px}
+  .menu-tools{flex-direction:column-reverse;align-items:stretch}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px}
+  @media (max-width:780px){.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:0 var(--gut) 4px;margin:0 calc(var(--gut) * -1)}}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:none;font:inherit;font-weight:600;font-size:.92rem;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--rule);background:var(--butter);color:var(--ink);cursor:pointer;transition:all .2s;white-space:nowrap}
+  .tab:hover{border-color:var(--forest-2)}
+  .tab[aria-selected="true"]{background:var(--forest);border-color:var(--forest);color:var(--butter)}
+  .tab .ct{opacity:.55;margin-left:6px;font-weight:500}
+  .search{position:relative;flex:1;min-width:220px;max-width:340px}
+  .search input{width:100%;font:inherit;min-height:46px;border-radius:999px;border:1.5px solid var(--rule);background:var(--butter);padding:0 18px 0 44px;color:var(--ink)}
+  .search input:focus{outline:none;border-color:var(--forest-2)}
+  .search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted)}
+  .items{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+  .item{display:grid;grid-template-columns:1fr auto;gap:4px 18px;padding:18px 0;border-bottom:1px dashed var(--rule)}
+  .item h4{font-weight:600;font-size:1.04rem;color:var(--ink);display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .item .tag{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:999px;background:var(--butter-2);color:var(--tomato-deep)}
+  .item .tag.hot{background:#fde3d9;color:var(--tomato-deep)}
+  .item .tag.star{background:#fdf0cf;color:#8a5f00}
+  .item p{grid-column:1/2;font-size:.9rem;color:var(--muted);line-height:1.5}
+  .item .p{grid-row:1/3;grid-column:2;font-family:var(--serif);font-size:1.12rem;color:var(--forest);white-space:nowrap;padding-top:1px}
+  .empty{color:var(--muted);padding:30px 0}
+  .menu-note{margin-top:38px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between;background:var(--butter);border:1px solid var(--rule);border-radius:20px;padding:20px 24px}
+  .menu-note p{color:var(--muted);font-size:.94rem;max-width:38em}
+  .menu-note b{color:var(--forest)}
+  @media (max-width:780px){.items{grid-template-columns:1fr}.search{max-width:none}}
+
+  /* why */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .why-item{border-radius:24px;padding:32px;background:var(--butter-2)}
+  .why-item:nth-child(2){background:var(--forest);color:#d9e3dc}
+  .why-item:nth-child(2) h3{color:var(--butter)}
+  .why-item .ic{width:52px;height:52px;border-radius:14px;background:var(--paper);display:grid;place-items:center;color:var(--tomato)}
+  .why-item:nth-child(2) .ic{background:var(--forest-2);color:var(--mustard)}
+  .why-item .ic svg{width:26px;height:26px}
+  .why-item h3{font-size:1.5rem;margin:22px 0 10px}
+  @media (max-width:880px){.why-grid{grid-template-columns:1fr}}
+
+  /* reviews */
+  .quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+  .quote{background:var(--paper);border:1px solid var(--rule);border-radius:24px;padding:30px}
+  .quote .stars{font-size:1.05rem}
+  .quote blockquote{font-family:var(--serif);font-size:1.3rem;line-height:1.35;color:var(--forest);margin:14px 0 18px}
+  .quote cite{font-style:normal;font-size:.88rem;color:var(--muted)}
+  @media (max-width:780px){.quotes{grid-template-columns:1fr}}
+
+  /* visit */
+  .visit{padding:0 0 clamp(72px,10vw,130px)}
+  .visit-card{background:var(--forest);color:#d9e3dc;border-radius:34px;padding:clamp(30px,6vw,72px);display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(32px,5vw,64px);align-items:center;position:relative;overflow:hidden}
+  .visit-card::after{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;background:var(--tomato);opacity:.16}
+  .visit-card .eyebrow{color:var(--mustard)}
+  .visit-card h2{color:var(--butter);font-size:clamp(2.3rem,5.4vw,4.2rem);margin-top:14px}
+  .visit-card h2 em{font-style:normal;color:var(--mustard)}
+  .visit-card p{margin:18px 0 30px;max-width:28em}
+  .visit-card .actions{display:flex;flex-wrap:wrap;gap:12px}
+  .visit-card .btn-ghost{border-color:var(--butter);color:var(--butter)}
+  .visit-card .btn-ghost:hover{background:var(--butter);color:var(--forest)}
+  .info{list-style:none;position:relative;z-index:1}
+  .info li{padding:18px 0;border-bottom:1px solid #35594a;display:grid;grid-template-columns:110px 1fr;gap:12px}
+  .info li:last-child{border-bottom:0}
+  .info .k{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#9fb8ab;padding-top:3px}
+  .info a{text-decoration:none;font-weight:500;color:var(--butter)}
+  .info a:hover{color:var(--mustard)}
+  @media (max-width:880px){.visit-card{grid-template-columns:1fr}.info li{grid-template-columns:92px 1fr}}
+
+  footer{padding:30px 0 96px;color:var(--muted);font-size:.88rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer a{text-decoration:none;font-weight:500}
+  footer a:hover{color:var(--tomato-deep)}
+
+  .fab{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 12px 28px -10px rgba(0,0,0,.45);transition:transform .2s}
+  .fab:hover{transform:scale(1.07)}
+  .fab svg{width:30px;height:30px}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.93.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.43 9.44-9.43a9.4 9.4 0 0 1 9.43 9.44c0 5.2-4.24 9.43-9.44 9.43m8.03-17.46A11.27 11.27 0 0 0 12.05.72C5.8.72.7 5.8.7 12.06c0 2 .52 3.95 1.52 5.67L.6 23.6l6.01-1.57a11.3 11.3 0 0 0 5.43 1.38h.01c6.25 0 11.34-5.09 11.34-11.34 0-3.03-1.18-5.88-3.32-8.02"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 22s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12zm0-9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></symbol>
+  <symbol id="search" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm9 2-4-4"/></symbol>
+  <symbol id="i-plate" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="7"/><circle cx="12" cy="13" r="3.5"/><path d="M2 4v6a2 2 0 0 0 2 2V20M22 4c-2 0-3 2-3 5s1 3 3 3v8"/></g></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="8" cy="8" r="1.5"/></g></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 20s-8-4.6-8-10.5A4.5 4.5 0 0 1 12 6.8a4.5 4.5 0 0 1 8 2.7C20 15.4 12 20 12 20z"/></symbol>
+
+  <!-- hero plate: chicken chop, fries, salad, sauce -->
+  <symbol id="plate" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="96" fill="#fffdf8"/>
+    <circle cx="100" cy="100" r="78" fill="none" stroke="#e6dccb" stroke-width="2"/>
+    <path d="M58 92c-6-26 18-46 46-42 26 4 44 20 40 44-4 26-30 38-54 34-18-3-28-18-32-36z" fill="#c9782f"/>
+    <path d="M66 90c-4-18 14-32 36-30 20 2 34 15 31 32-3 19-23 28-41 25-14-2-23-13-26-27z" fill="#dd9445"/>
+    <path d="M74 80q14-8 30-2M78 96q18-6 40 0M84 110q12-4 26-1" stroke="#b5631f" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+    <path d="M70 72c18 10 42 12 62 4-6 18-30 30-52 22-10-4-12-14-10-26z" fill="#f2b33d" opacity=".85"/>
+    <g fill="#f5c35a" stroke="#d99a2b" stroke-width="1.5">
+      <rect x="124" y="118" width="9" height="44" rx="3" transform="rotate(28 128 140)"/>
+      <rect x="138" y="112" width="9" height="46" rx="3" transform="rotate(14 142 135)"/>
+      <rect x="150" y="104" width="9" height="40" rx="3" transform="rotate(-4 154 124)"/>
+      <rect x="114" y="130" width="9" height="38" rx="3" transform="rotate(44 118 149)"/>
+    </g>
+    <g>
+      <ellipse cx="62" cy="142" rx="22" ry="16" fill="#6aa04f"/>
+      <ellipse cx="52" cy="136" rx="12" ry="9" fill="#86bd62"/>
+      <circle cx="70" cy="146" r="7" fill="#e2552d"/>
+      <circle cx="58" cy="150" r="5" fill="#e2552d"/>
+      <ellipse cx="72" cy="134" rx="7" ry="5" fill="#fffdf8" opacity=".85"/>
+    </g>
+    <circle cx="146" cy="70" r="16" fill="#fff" stroke="#e6dccb" stroke-width="2"/>
+    <circle cx="146" cy="70" r="11" fill="#f0e6c8"/>
+  </symbol>
+
+  <!-- small dish generic: bowl / plate with fillings (colors via vars) -->
+  <symbol id="dish-pasta" viewBox="0 0 150 150">
+    <circle cx="75" cy="75" r="70" fill="#fffdf8"/>
+    <circle cx="75" cy="75" r="56" fill="none" stroke="#e6dccb" stroke-width="2"/>
+    <g fill="none" stroke="var(--d1,#f2d48a)" stroke-width="5" stroke-linecap="round">
+      <path d="M40 78c10-20 30-24 46-12s30 10 26-6"/><path d="M38 90c16-8 28 4 44 0s22-18 34-6"/><path d="M48 104c12-12 30-6 40-2s20 2 22-8"/><path d="M46 64c8-10 22-16 34-10"/>
+    </g>
+    <path d="M60 70c4-10 24-12 30 0s-6 18-16 18-18-8-14-18z" fill="var(--d2,#f08a5d)"/>
+    <circle cx="96" cy="58" r="10" fill="#fff"/><circle cx="96" cy="58" r="5" fill="#f2b33d"/>
+  </symbol>
+  <symbol id="dish-fish" viewBox="0 0 150 150">
+    <circle cx="75" cy="75" r="70" fill="#fffdf8"/>
+    <circle cx="75" cy="75" r="56" fill="none" stroke="#e6dccb" stroke-width="2"/>
+    <path d="M30 70c8-18 40-22 64-12 6 3 8 10 4 14-22 14-56 16-68-2z" fill="#d99540"/>
+    <path d="M36 68c8-12 34-14 54-8" stroke="#b5762a" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M74 84c14-8 32-10 44 2-6 12-30 14-44-2z" fill="#e0a24a"/>
+    <path d="M42 90q20 14 46 6" stroke="var(--d2,#f2b33d)" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <g fill="#f5c35a" stroke="#d99a2b" stroke-width="1.5"><rect x="92" y="96" width="8" height="30" rx="3" transform="rotate(-30 96 111)"/><rect x="104" y="92" width="8" height="30" rx="3" transform="rotate(-12 108 107)"/><rect x="80" y="104" width="8" height="26" rx="3" transform="rotate(-46 84 117)"/></g>
+    <ellipse cx="108" cy="54" rx="14" ry="10" fill="#6aa04f"/><circle cx="112" cy="58" r="5" fill="#e2552d"/>
+  </symbol>
+  <symbol id="dish-croissant" viewBox="0 0 150 150">
+    <circle cx="75" cy="75" r="70" fill="#fffdf8"/>
+    <circle cx="75" cy="75" r="56" fill="none" stroke="#e6dccb" stroke-width="2"/>
+    <path d="M28 88c6-26 30-42 47-42s41 16 47 42c-8 6-18 2-22-4-6 8-16 10-25 10s-19-2-25-10c-4 6-14 10-22 4z" fill="#d98a32"/>
+    <path d="M52 62l8 30M75 50v42M98 62l-8 30" stroke="#b56a1f" stroke-width="3" stroke-linecap="round"/>
+    <path d="M50 92c14 6 36 6 50 0" stroke="var(--d2,#f4d06b)" stroke-width="6" stroke-linecap="round" fill="none"/>
+  </symbol>
+</svg>
+
+<nav class="nav" id="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Sit N Bite Cafe home">
+      <span class="logo-mark" aria-hidden="true">S&amp;B</span>
+      <span class="logo-word">Sit <span>N</span> Bite</span>
+    </a>
+    <ul>
+      <li class="hide-m"><a href="#favourites">Favourites</a></li>
+      <li class="hide-m"><a href="#menu">Menu</a></li>
+      <li class="hide-m"><a href="#visit">Visit</a></li>
+      <li><a class="btn btn-wa" href="https://wa.me/60103798851?text=Hi%20Sit%20N%20Bite!" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="rating"><b>4.9</b><span class="stars" aria-hidden="true">★★★★★</span>1,000+ Google reviews</span>
+      <h1>Pull up a chair.<br><em>Stay</em> for seconds.</h1>
+      <p class="lead">A cosy neighbourhood cafe in Medan Ipoh Bestari serving generous chicken chops, creamy carbonara, crispy fish n chips, buttery croissants and the local favourites you crave.</p>
+      <div class="actions">
+        <a class="btn btn-wa" href="https://wa.me/60103798851?text=Hi%20Sit%20N%20Bite!%20I'd%20like%20to%20order." target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Order on WhatsApp</a>
+        <a class="btn btn-ghost" href="#menu">View full menu</a>
+      </div>
+      <div class="facts">
+        <div><strong>60+</strong>dishes &amp; drinks</div>
+        <div><strong>RM 16.90</strong>chops from</div>
+        <div><strong>12 pm</strong>doors open</div>
+      </div>
+    </div>
+    <div class="plate-art reveal" aria-hidden="true">
+      <div class="bg"></div>
+      <svg class="plate" viewBox="0 0 200 200"><use href="#plate"/></svg>
+      <div class="badge b1"><span>chops from<b>RM16.90</b></span></div>
+      <div class="badge b2"><span>rated<b>4.9★</b></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <span>Salted Egg Chicken Chop</span><span>Grilled Salmon Carbonara</span><span>Fish n Chips</span><span>Spicy Mala Spaghetti</span><span>Kam Heong Chicken Rice</span><span>Smoked Duck Croissant</span><span>Green Onion Pancake</span><span>Grilled Lamb Chop</span>
+    <span>Salted Egg Chicken Chop</span><span>Grilled Salmon Carbonara</span><span>Fish n Chips</span><span>Spicy Mala Spaghetti</span><span>Kam Heong Chicken Rice</span><span>Smoked Duck Croissant</span><span>Green Onion Pancake</span><span>Grilled Lamb Chop</span>
+  </div>
+</div>
+
+<section class="sec" id="favourites">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow">House favourites</span>
+        <h2>What everyone<br>keeps ordering.</h2>
+      </div>
+      <p>Big portions, bold sauces and fair prices. Here's where most first-timers start.</p>
+    </div>
+    <div class="favs">
+      <article class="fav reveal">
+        <div class="dish" style="background:#fbe6c4"><svg viewBox="0 0 200 200"><use href="#plate"/></svg></div>
+        <span class="cat">Chops with chips</span>
+        <h3>Salted Egg Chicken Chop</h3>
+        <p>Crispy chicken chop drizzled with rich, golden salted egg sauce.</p>
+        <span class="price">RM 19.90</span>
+      </article>
+      <article class="fav reveal">
+        <div class="dish" style="background:#fde0d6;--d1:#f3dc9c;--d2:#f19a78"><svg viewBox="0 0 150 150"><use href="#dish-pasta"/></svg></div>
+        <span class="cat">Spaghetti</span>
+        <h3>Grilled Salmon Carbonara</h3>
+        <p>Silky carbonara with a tender grilled salmon fillet and parmesan.</p>
+        <span class="price">RM 29.40</span>
+      </article>
+      <article class="fav reveal">
+        <div class="dish" style="background:#dde9de;--d2:#f2b33d"><svg viewBox="0 0 150 150"><use href="#dish-fish"/></svg></div>
+        <span class="cat">Fish series</span>
+        <h3>Salted Egg Fish n Chips</h3>
+        <p>Fried dory fish, fries and salad, finished with salted egg sauce.</p>
+        <span class="price">RM 22.90</span>
+      </article>
+      <article class="fav reveal">
+        <div class="dish" style="background:#f6ead2;--d2:#c0533a"><svg viewBox="0 0 150 150"><use href="#dish-croissant"/></svg></div>
+        <span class="cat">Pastry</span>
+        <h3>Cheese Smoked Duck Croissant</h3>
+        <p>Flaky butter croissant layered with smoked duck and melted cheese.</p>
+        <span class="price">RM 18.40</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec menu" id="menu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow">Full menu</span>
+        <h2>Something for<br>every appetite.</h2>
+      </div>
+      <p>All prices in RM. Tap a category or search for a dish, then send your order straight to us on WhatsApp.</p>
+    </div>
+
+    <div class="menu-tools">
+      <div class="tabs" role="tablist" aria-label="Menu categories" id="tabs"></div>
+      <label class="search"><svg><use href="#search"/></svg><input type="search" id="q" placeholder="Search dishes…" aria-label="Search the menu"></label>
+    </div>
+
+    <div class="items" id="items" role="tabpanel" aria-live="polite"></div>
+
+    <div class="menu-note">
+      <p><b>Make it a set:</b> ask our crew about adding mushroom soup and a drink to your main. Spicy items are marked, and the Mala Spaghetti really is <b>very</b> spicy.</p>
+      <a class="btn btn-wa" href="https://wa.me/60103798851?text=Hi%20Sit%20N%20Bite!%20I'd%20like%20to%20order%3A%20" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Order on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="ic"><svg><use href="#i-plate"/></svg></div>
+        <h3>Generous portions</h3>
+        <p>Proper plates with fries, salad and egg on the side. Nobody leaves Sit N Bite hungry.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="ic"><svg><use href="#i-tag"/></svg></div>
+        <h3>Fair prices</h3>
+        <p>Chicken chops and pasta from RM16.90, kaya toast from RM6.60 and drinks from RM6.90.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="ic"><svg><use href="#i-heart"/></svg></div>
+        <h3>Made for gatherings</h3>
+        <p>A relaxed, comfortable space for family lunches, catch-ups with friends and lazy weekend bites.</p>
+      </div>
+    </div>
+
+    <div class="quotes">
+      <figure class="quote reveal">
+        <span class="stars" aria-label="5 stars">★★★★★</span>
+        <blockquote>“Food was delicious and served fresh. The portions were generous and the prices were reasonable.”</blockquote>
+        <cite>Google review</cite>
+      </figure>
+      <figure class="quote reveal">
+        <span class="stars" aria-label="5 stars">★★★★★</span>
+        <blockquote>“Nice environment for family and friends. Will definitely come again!”</blockquote>
+        <cite>Google review</cite>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="visit-card reveal">
+      <div>
+        <span class="eyebrow">Visit / Contact</span>
+        <h2>Come sit.<br>Stay for a <em>bite.</em></h2>
+        <p>Drop by Medan Ipoh Bestari, or WhatsApp us to order ahead, check today's hours or reserve a table for your group.</p>
+        <div class="actions">
+          <a class="btn btn-wa" href="https://wa.me/60103798851?text=Hi%20Sit%20N%20Bite!" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Contact Us</a>
+          <a class="btn btn-ghost" href="https://maps.app.goo.gl/E1g7abeWLZ8YPKQo9" target="_blank" rel="noopener"><svg><use href="#pin"/></svg>Get directions</a>
+        </div>
+      </div>
+      <ul class="info">
+        <li><span class="k">WhatsApp</span><a href="https://wa.me/60103798851" target="_blank" rel="noopener">010-379 8851</a></li>
+        <li><span class="k">Address</span><a href="https://maps.app.goo.gl/E1g7abeWLZ8YPKQo9" target="_blank" rel="noopener">32, Jln Medan Ipoh 1B, Medan Ipoh Bestari, 31400 Ipoh, Perak</a></li>
+        <li><span class="k">Hours</span><span>Opens 12 pm · WhatsApp us for today's hours</span></li>
+        <li><span class="k">Social</span><span><a href="https://www.instagram.com/sit_n_bite/" target="_blank" rel="noopener">Instagram @sit_n_bite</a><br><a href="https://www.facebook.com/p/Sit-N-Bite-61559441068107/" target="_blank" rel="noopener">Facebook</a></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Sit N Bite Cafe · Medan Ipoh Bestari, Ipoh</span>
+    <span><a href="https://www.instagram.com/sit_n_bite/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/p/Sit-N-Bite-61559441068107/" target="_blank" rel="noopener">Facebook</a> · <a href="https://wa.me/60103798851" target="_blank" rel="noopener">WhatsApp</a></span>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/60103798851?text=Hi%20Sit%20N%20Bite!" target="_blank" rel="noopener" aria-label="Chat with Sit N Bite on WhatsApp"><svg><use href="#wa"/></svg></a>
+
+<script>
+  // [name, description, price, tag?]  tag: "hot" | "star"
+  const MENU = {
+    "Chops with Chips": [
+      ["Fried Chicken Chop","Crispy, golden-fried chicken chop with savoury gravy and seasonal vegetables.","16.90"],
+      ["Grilled Chicken Chop","Juicy grilled chicken chop, seasoned to perfection, with fresh vegetables.","16.90"],
+      ["Thai Sauce Chicken Chop","Grilled chicken topped with a zesty Thai sauce, served with jasmine rice and vegetables.","17.90"],
+      ["Salted Egg Chicken Chop","Crispy chicken chop drizzled with rich salted egg sauce, with vegetables.","19.90","star"],
+      ["Spicy Mala Chicken Chop","Tender chicken marinated in bold mala spices, grilled and served with a zesty sauce.","19.90","hot"],
+      ["Kam Heong Sauce Chicken Chop","Chicken chop in aromatic Kam Heong sauce with steamed rice and fresh vegetables.","19.90"],
+      ["Creamy Butter Chicken Chop","Tender chicken chop in a rich, creamy butter sauce with aromatic herbs.","19.90"],
+      ["Grilled Lamb Chop with Chips","Succulent lamb chops with a charred crust, served with hot, salted golden chips.","37.50","star"]
+    ],
+    "Chop & Rice": [
+      ["Grilled Chicken Chop Rice","Grilled chicken chop with rice, egg and salad.","16.90"],
+      ["Thai Sauce Chicken Chop Rice","Thai sauce chicken chop with rice, egg and salad.","17.90"],
+      ["Kam Heong Sauce Chicken Rice","Chicken pieces coated in fragrant kam heong sauce over fluffy steamed rice.","18.50"],
+      ["Spicy Mala Chicken Chop Rice","Spicy mala chicken chop with rice, egg and salad.","19.90","hot"],
+      ["Salted Egg Chicken Chop Rice","Salted egg chicken chop with rice, egg and salad.","19.90"],
+      ["Creamy Butter Chicken Chop Rice","Creamy butter chicken chop served with rice.","19.90"],
+      ["Japanese Curry Chicken Rice","Japanese curry with fried chicken, rice and salad.","21.90"]
+    ],
+    "Spaghetti": [
+      ["Grilled Chicken Chop Spaghetti, Mushroom Sauce","Served with egg and salad.","16.90"],
+      ["Grilled Chicken Chop Spaghetti, Black Pepper Sauce","Served with egg and salad.","16.90"],
+      ["Aglio Olio","Served with egg and salad.","17.90","hot"],
+      ["Spaghetti Bolognese (Chicken)","Served with salad.","17.90"],
+      ["Grilled Chicken Chop Aglio Olio","Aglio olio with grilled chicken chop, egg and salad.","18.90","hot"],
+      ["Aglio Olio, Thai Sauce Chicken Chop","Aglio olio with Thai sauce grilled chicken chop, egg and salad.","19.90"],
+      ["Salted Egg Chicken Chop Aglio Olio","Aglio olio with salted egg chicken chop, egg and salad.","19.90"],
+      ["Spicy Mala Spaghetti with Grilled Chicken Chop","With egg and salad. Very, very spicy — please think twice before ordering :)","19.90","hot"],
+      ["Aglio Olio, Creamy Butter Chicken Chop","Aglio olio with creamy butter grilled chicken chop, egg and salad.","21.00"],
+      ["Carbonara Spaghetti","Creamy carbonara with melted cheese, fluffy egg and crisp salad.","22.90"],
+      ["Spaghetti Bolognese with Beef Meatballs","Served with beef meatballs and salad.","23.90"],
+      ["Bolognese with Tempura Fish","Rich tomato bolognese topped with crispy tempura fish and fresh herbs.","28.30"],
+      ["Spicy Carbonara with Tempura Fish","Spiced creamy carbonara with crispy tempura fish and parmesan.","29.30","hot"],
+      ["Grilled Salmon Carbonara","Silky carbonara with grilled salmon fillet, crispy pancetta and parmesan.","29.40","star"]
+    ],
+    "Fish Series": [
+      ["Fish n Chips","Fried dory fish with fries, salad and tartar sauce.","19.90"],
+      ["Thai Sauce Fish n Chips","Fried dory fish with fries, salad and Thai sauce.","21.90"],
+      ["Creamy Butter Sauce Fish n Chips","Fried dory fish with fries, salad and creamy butter sauce.","22.90"],
+      ["Salted Egg Sauce Fish n Chips","Fried dory fish with fries, salad and salted egg sauce.","22.90","star"],
+      ["Aglio Olio Spaghetti with Tempura Fish","Spicy aglio olio topped with tempura fish.","23.90","hot"],
+      ["Carbonara Spaghetti with Tempura Fish","Carbonara with fried dory fish, egg and salad.","27.90"],
+      ["Grilled Salmon with Tartar Sauce","Atlantic salmon fillet grilled to a golden crust, with creamy house tartar.","37.50"]
+    ],
+    "All Time Favourites": [
+      ["Premium Big Breakfast","Scrambled eggs, crispy bacon, sausages, golden hash browns and toast.","14.60","star"],
+      ["Thai Basil Pork Rice","Minced meat wok-fried with Thai basil over jasmine rice, topped with a fried egg.","14.60"],
+      ["Taiwanese Braised Minced Pork Rice","Braised minced meat in savoury soy sauce over rice, with scallions and egg.","14.60"]
+    ],
+    "Pastry": [
+      ["Kaya Butter Toast","Toasted bread with rich kaya and golden butter. A Malaysian breakfast classic.","6.60"],
+      ["Croissant","Flaky, golden, buttery layers with a tender crumb.","9.30"],
+      ["Kaya Butter Croissant","Flaky croissant layered with kaya and smooth butter.","14.60"],
+      ["Ham and Cheese Croissant","Butter croissant with premium ham and melted cheese.","18.40"],
+      ["Cheese Smoked Duck Croissant","Butter croissant with tender smoked duck and melted cheese.","18.40","star"],
+      ["Cheese Tuna Croissant","Flaky croissant filled with tuna and melted cheese.","18.40"],
+      ["Chicken Pie","Tender chicken and herbs in a creamy sauce, baked in golden flaky pastry.","18.70"]
+    ],
+    "Snacks": [
+      ["Green Onion Pancake","Crispy, flaky scallion pancake.","10.90","star"],
+      ["Edamame","Lightly salted soybeans.","10.90"],
+      ["French Fries","Golden and crispy.","10.90"],
+      ["Waffle Fries","Crunchy lattice-cut fries.","11.90"],
+      ["Cheesy Wedges","Potato wedges with cheese.","11.90"],
+      ["Okonomiyaki","Japanese savoury pancake.","11.90"],
+      ["Nuggets","7 pieces.","12.90"],
+      ["Penang Chicken Lobak","Spiced shredded chicken wrapped in a golden crispy skin.","14.90"],
+      ["Tiger Prawn Roll","Tiger prawns with herbs and spices in crispy golden pastry.","14.90"],
+      ["Crispy Shrimp","Golden fried shrimp, crunchy outside and juicy inside.","16.90"]
+    ],
+    "Beverages": [
+      ["Coca-Cola","","6.90"],
+      ["100 Plus","","6.90"],
+      ["Ice Lemon Tea","","6.90"],
+      ["Iced Green Tea","","6.90"],
+      ["Iced Chocolate","","7.90"],
+      ["Ribena Lemon","","7.90"],
+      ["Chang Jiang White Coffee","Smooth, creamy and aromatic. A beloved Malaysian classic.","8.50","star"]
+    ]
+  };
+
+  const cats = ["All", ...Object.keys(MENU)];
+  const all = Object.entries(MENU).flatMap(([c, list]) => list.map(i => ({cat:c, n:i[0], d:i[1], p:i[2], t:i[3]})));
+  const tabsEl = document.getElementById('tabs');
+  const itemsEl = document.getElementById('items');
+  const q = document.getElementById('q');
+  let current = "Chops with Chips";
+
+  const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const tagHtml = t => t === 'hot' ? '<span class="tag hot">Spicy</span>' : t === 'star' ? '<span class="tag star">Popular</span>' : '';
+
+  cats.forEach(c => {
+    const b = document.createElement('button');
+    b.className = 'tab'; b.type = 'button'; b.setAttribute('role','tab'); b.dataset.cat = c;
+    const count = c === 'All' ? all.length : MENU[c].length;
+    b.innerHTML = esc(c) + '<span class="ct">' + count + '</span>';
+    b.addEventListener('click', () => { current = c; q.value = ''; render(); });
+    tabsEl.appendChild(b);
+  });
+  const tabs = [...tabsEl.children];
+  tabsEl.addEventListener('keydown', e => {
+    const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+    if (!d) return;
+    const i = cats.indexOf(current);
+    current = cats[(i + d + cats.length) % cats.length];
+    q.value = ''; render(); tabs[cats.indexOf(current)].focus();
+  });
+
+  function render(){
+    const term = q.value.trim().toLowerCase();
+    const showCat = term ? 'All' : current;
+    tabs.forEach(t => {
+      const on = t.dataset.cat === showCat;
+      t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1;
+      if (on && !term) tabsEl.scrollTo({left: Math.max(0, t.offsetLeft - tabsEl.offsetLeft - 16), behavior:'smooth'});
+    });
+    const list = all.filter(i => (showCat === 'All' || i.cat === showCat) && (!term || (i.n + ' ' + i.d + ' ' + i.cat + ' ' + (i.t === 'hot' ? 'spicy' : i.t === 'star' ? 'popular' : '')).toLowerCase().includes(term)));
+    itemsEl.innerHTML = list.length ? list.map(i =>
+      '<div class="item"><h4>' + esc(i.n) + tagHtml(i.t) + '</h4><span class="p">RM ' + i.p + '</span>' + (i.d ? '<p>' + esc(i.d) + '</p>' : '') + '</div>'
+    ).join('') : '<p class="empty">No dishes match "' + esc(term) + '". Try "chicken", "salmon" or "spicy".</p>';
+  }
+  q.addEventListener('input', render);
+  render();
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), {passive:true});
+
+  const io = 'IntersectionObserver' in window && new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+</script>
+</body>
+</html>
